@@ -23,11 +23,11 @@ def load_sts_dataset(filename):
   return pd.DataFrame(sent_pairs, columns=["sent_1", "sent_2", "sim"])
 
 def download_and_load_sts_data():
+  " file is temporarily cached in /tmp/tfhub_modules "
   sts_dataset = tf.keras.utils.get_file(
       fname="Stsbenchmark.tar.gz",
       origin="http://ixa2.si.ehu.es/stswiki/images/4/48/Stsbenchmark.tar.gz",
       extract=True)
-
   sts_dev = load_sts_dataset(
       os.path.join(os.path.dirname(sts_dataset), "stsbenchmark", "sts-dev.csv"))
   sts_test = load_sts_dataset(
@@ -94,6 +94,9 @@ text_a = sts_data['sent_1'].tolist()
 text_b = sts_data['sent_2'].tolist()
 dev_scores = sts_data['sim'].tolist()
 
+print("* text_a[0:5]:", text_a[0:5])
+print("* text_b[0:5]:", text_b[0:5])
+
 def run_sts_benchmark(session):
   """Returns the similarity scores"""
   emba, embb, scores = session.run(
@@ -108,7 +111,13 @@ with tf.Session(config=session_conf) as session:
   session.run(tf.global_variables_initializer())
   session.run(tf.tables_initializer())
   scores = run_sts_benchmark(session)
+  print("* scores[0:5]:", scores[0:5])
 
 pearson_correlation = scipy.stats.pearsonr(scores, dev_scores)
 print('Pearson correlation coefficient = {0}\np-value = {1}'.format(
     pearson_correlation[0], pearson_correlation[1]))
+
+for i in range(len(text_a)):
+    print("- sentence 1:", text_a[i])
+    print("- sentence 2:", text_b[i])
+    print("  similarity:", scores[i], "\n")
