@@ -10,6 +10,36 @@ with changes to:
 # Example output
 
 ````````
+- sentence 1: Calif man pleads not guilty in girl kidnap case
+- sentence 2: Calif. man pleads not guilty in terrorism case
+  similarity: 0.39930767
+- sentence 1: Motorists killed after Japanese tunnel collapses
+- sentence 2: Cars trapped in tunnel collapse outside Tokyo
+  similarity: 0.30847847
+- sentence 1: Chinese shares close lower on Wednesday
+- sentence 2: Chinese students attacked in France
+  similarity: -0.094588995
+- sentence 1: Red grapes and blueberries boost immune system, scientists say
+- sentence 2: Red grapes, blueberries boost human immunity
+  similarity: 0.4463483
+- sentence 1: 2 police killed in eastern Afghan explosion
+- sentence 2: At least 28 people die in Chinese coal mine explosion
+  similarity: 0.07962251
+- sentence 1: The Note's Must-Reads for Monday, November 25, 2013
+- sentence 2: The Note's Must-Reads for Tuesday, October 8, 2013
+  similarity: 0.68068516
+- sentence 1: Lebanon businesses strike in protest at political impasse
+- sentence 2: Tunisia president says confident can overcome political crisis
+  similarity: -0.0041418076
+- sentence 1: Indian police round up all five suspects in Mumbai rape case
+- sentence 2: Mumbai police arrest fifth suspect in gang-rape case
+  similarity: 0.5430909
+- sentence 1: Security tightens for Thatcher funeral
+- sentence 2: Security agencies worry about new terrorist threats in Kenya
+  similarity: -0.19768381
+- sentence 1: Google invests $200 million in Texas wind farm
+- sentence 2: Google invests 200 million USD in Texas wind farm project
+  similarity: 0.65295887
 - sentence 1: Euro crisis is over, says France's Francois Hollande
 - sentence 2: Eurozone debt crisis is over, says France's President
   similarity: 0.51832324
